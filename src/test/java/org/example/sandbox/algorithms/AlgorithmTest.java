@@ -13,6 +13,10 @@ class AlgorithmTest {
         assertEquals(2, Algorithm.fibonacci(3));
         assertEquals(3, Algorithm.fibonacci(4));
         assertEquals(5, Algorithm.fibonacci(5));
+        assertEquals(8, Algorithm.fibonacci(6));
+        assertEquals(13, Algorithm.fibonacci(7));
+        assertEquals(21, Algorithm.fibonacci(8));
+        assertEquals(34, Algorithm.fibonacci(9));
         assertEquals(55, Algorithm.fibonacci(10));
     }
 
@@ -24,11 +28,20 @@ class AlgorithmTest {
         assertEquals(2, Algorithm.fibonacciRecursive(3));
         assertEquals(3, Algorithm.fibonacciRecursive(4));
         assertEquals(5, Algorithm.fibonacciRecursive(5));
+        assertEquals(8, Algorithm.fibonacciRecursive(6));
+        assertEquals(13, Algorithm.fibonacciRecursive(7));
+        assertEquals(21, Algorithm.fibonacciRecursive(8));
+        assertEquals(34, Algorithm.fibonacciRecursive(9));
         assertEquals(55, Algorithm.fibonacciRecursive(10));
     }
 
     @Test
-    void testFibonacciLargeNumber() {
-        assertEquals(12586269025L, Algorithm.fibonacciRecursive(50));
+    void testFibonacciNegative() {
+        assertThrows(IllegalArgumentException.class, () -> Algorithm.fibonacci(-1));
+    }
+
+    @Test
+    void testFibonacciRecursiveNegative() {
+        assertThrows(IllegalArgumentException.class, () -> Algorithm.fibonacciRecursive(-1));
     }
 }

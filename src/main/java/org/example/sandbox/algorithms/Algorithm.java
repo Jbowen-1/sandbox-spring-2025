@@ -7,7 +7,6 @@ public class Algorithm {
 
     public static Map<Integer, Integer> map = new HashMap<>();
 
-
     // iterative approach
     public static int fibonacci(int n) {
 
@@ -25,7 +24,6 @@ public class Algorithm {
         }
 
         return fib;
-
     }
 
     // recursive approach
@@ -48,20 +46,19 @@ public class Algorithm {
             return map.get(n);
         }
 
-        int result = memo(n - 1) + memo(n - 2);
-        map.put(n, result);
+        int fib = memo(n - 1) + memo(n - 2);
+        map.put(n, fib);
 
-        return  result;
-
+        return fib;
     }
 
-    public static void main(String[] args) {
-
-        System.out.println(fibonacci(10));
-        System.out.println(fibonacciRecursive(10));
+    public static void main(String[] args) {  // psvm
+        //System.out.println(fibonacci(10)); // Output: 55
+        //System.out.println(fibonacciRecursive(10)); // Output: 55
 
         for (int x = 0; x <= 50; x++) {
             System.out.println("Fibonacci(" + x + ") = " + fibonacciRecursive(x));
         }
     }
+
 }
