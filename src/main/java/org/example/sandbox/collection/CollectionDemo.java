@@ -16,6 +16,9 @@ public class CollectionDemo {
         set.add("Hi");
         set.add("Hi");
 
+        System.out.println("set: " + set);
+        System.out.println("set size: " + set.size());
+
         set2.add("Hi");
         set2.add("Hi");
         set2.add("Hi");
@@ -23,10 +26,7 @@ public class CollectionDemo {
         set2.add("Hi");
         set2.add("Hi");
 
-
-        System.out.println("Set: " + set);
-        System.out.println("Set size: " + set.size());
-        System.out.println("Set2: " + set2);
+        System.out.println("set2: " + set2);
 
         Set<String> set3 = new TreeSet<>();
 
@@ -37,12 +37,12 @@ public class CollectionDemo {
         set3.add("Hi");
         set3.add("Hi");
 
-        System.out.println("Set3: " + set3);
+        System.out.println("set3: " + set3);
 
         List<String> list = new ArrayList<>();
         List<String> list2 = new Vector<>();
 
-
+        // what the heck is going on here?
         List<String> list3 = new LinkedList<>();
         Queue<String> queue = new LinkedList<>();
         Deque<String> deque = new LinkedList<>();
@@ -53,9 +53,7 @@ public class CollectionDemo {
         priorityQueue.add("Hi");
         priorityQueue.remove("Hi");
 
-        System.out.println("Priority Queue: " + priorityQueue);
-
-
+        System.out.println("priorityQueue: " + priorityQueue);
 
 
     }

@@ -6,18 +6,18 @@ public class HelloException {
 
     public static void main(String[] args) {
 
-        //try-catch
+        // try-catch
         try {
-            //do something
+            // do something
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        //do something else
+        // do something else
 
-        //try-catch-catch - order of catch blocks matters per hierarchy
+        // try-catch-catch - order of catch blocks matters per hierarchy
         try {
-            //do something awesome
+            // do something awesome
         } catch (NullPointerException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -25,29 +25,31 @@ public class HelloException {
         }
 
         try {
-            //do something
+            // do something
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            //finally do something
+            // finally do something
         }
 
         try {
-            //do something
+            // do something
         } finally {
-            //finally do something
+            // do something
         }
 
-        //java 7 multi-try-catch
+        // java 7 multi-try-catch
         try {
-            //do something
+            // do something
         } catch (ArithmeticException | NullPointerException | SecurityException e) {
             e.printStackTrace();
         }
 
-        //try with resources
-        try (Scanner scanner1 = new Scanner(System.in)) {
-            //do something
+        // try-with-resources
+        try(Scanner scanner1 = new Scanner(System.in)){
+            // do something
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         Scanner scanner2 = null;
@@ -58,11 +60,5 @@ public class HelloException {
                 scanner2.close();
             }
         }
-
     }
-
-
-    }
-
-
-
+}

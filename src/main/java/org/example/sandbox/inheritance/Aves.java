@@ -22,5 +22,4 @@ public abstract class Aves implements Animal {
     public void eat(String food) {
 
     }
-
 }

@@ -5,7 +5,6 @@ public class Box<T> {
     T contents;
 
     public Box() {
-
     }
 
     public Box(T contents) {
@@ -22,8 +21,8 @@ public class Box<T> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Box{");
-        sb.append("contents=").append(contents);
+        final StringBuilder sb = new StringBuilder("Box {");
+        sb.append(contents);
         sb.append('}');
         return sb.toString();
     }

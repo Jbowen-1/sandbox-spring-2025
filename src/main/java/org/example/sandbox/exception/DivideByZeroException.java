@@ -1,6 +1,9 @@
 package org.example.sandbox.exception;
 
-public class DivideByZeroException extends Exception{
+public class DivideByZeroException extends Exception {
+
+    public DivideByZeroException() {
+    }
 
     public DivideByZeroException(String message) {
         super(message);
@@ -12,8 +15,5 @@ public class DivideByZeroException extends Exception{
 
     public DivideByZeroException(Throwable cause) {
         super(cause);
-    }
-
-    public DivideByZeroException() {
     }
 }

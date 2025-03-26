@@ -31,6 +31,5 @@ public class SingleDriver {
         System.out.println(linkedList.contains("fifth"));
         System.out.println(linkedList.contains("fourth"));
 
-
     }
 }

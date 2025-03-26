@@ -15,5 +15,4 @@ public enum FaceValue {
     JACK,
     QUEEN,
     KING
-
 }

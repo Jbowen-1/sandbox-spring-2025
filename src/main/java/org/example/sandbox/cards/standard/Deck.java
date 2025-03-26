@@ -7,9 +7,9 @@ public interface Deck {
     void shuffle();
     void cut(int index);
     Card deal();
-    Card turnover();
-    int search (Card card);
-    void newOrder(Deck cards);
+    Card turnOver();
+    int search(Card card);
+    void newOrder();
     Card draw();
     int size();
 

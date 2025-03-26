@@ -53,13 +53,13 @@ public class Widget {
         return sb.toString();
     }
 
-    // HashCode method
+    // hashCode method
     @Override
     public int hashCode() {
         return Objects.hash(length, width, height);
     }
 
-    // Equals method
+    // equals method
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,7 +74,9 @@ public class Widget {
         return new WidgetBuilder();
     }
 
+    // Builder
     public static class WidgetBuilder {
+
         private double length;
         private double width;
         private double height;
@@ -98,5 +100,4 @@ public class Widget {
             return new Widget(length, width, height);
         }
     }
-
 }

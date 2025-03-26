@@ -3,9 +3,7 @@ package org.example.sandbox.generics;
 import java.util.ArrayList;
 import java.util.List;
 
-//when <T extends Box<? extends Number>> is used, it means that T can be any type of Box that contains a Number or a subclass of Number
-//Crate<T> is placed so that sandbox code is runnable
-public class Crate<T> {
+public class Crate<T extends Box<? extends Number>> {
 
     private List<T> contents;
 
@@ -19,9 +17,8 @@ public class Crate<T> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Crate [");
+        final StringBuilder sb = new StringBuilder("Crate ");
         sb.append(contents);
-        sb.append(']');
         return sb.toString();
     }
 }

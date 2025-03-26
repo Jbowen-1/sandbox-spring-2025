@@ -1,6 +1,7 @@
 package org.example.sandbox.streamapi;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.*;
 import java.util.stream.*;
 
@@ -17,14 +18,14 @@ public class StreamExamples {
         // map
         List<Integer> square = numbers
                 .stream()
-                .map(x -> x * x)
+                .map(x -> x * x) // monad
                 .collect(Collectors.toList());
         square.forEach(System.out::println);
 
         // filter
         List<String> result = names
                 .stream()
-                .filter(x -> x.startsWith("S"))
+                .filter(s -> s.startsWith("S"))
                 .collect(Collectors.toList());
         result.forEach(System.out::println);
 
@@ -40,6 +41,7 @@ public class StreamExamples {
                 .stream()
                 .map(x -> x * x)
                 .collect(Collectors.toSet());
+        squared.forEach(System.out::println);
 
         // foreach
         numbers
@@ -49,15 +51,14 @@ public class StreamExamples {
 
         // reduce
         int sum = 0;
-        for (int x = 1; x <= 5; x++) {
+        for(int x = 1; x <= 5; x++) {
             if (x % 2 == 0) {
                 sum += x;
             }
         }
         System.out.println(sum);
 
-        int evenSum = numbers
-                .stream()
+        int evenSum = numbers.stream()
                 .filter(evenOnlyPredicate)
                 .reduce(0, (a, b) -> a + b);
         System.out.println(evenSum);
@@ -66,5 +67,26 @@ public class StreamExamples {
                 .filter(evenOnly)
                 .sum();
         System.out.println(totalSum);
+
+        //Random ints
+        Random random = new Random();
+        random.ints(1, 11)
+                .skip(5)
+                .limit(50)
+                .forEach(System.out::println);
+
+        // IntStream generate
+        System.out.println();
+        final AtomicInteger counter = new AtomicInteger(1);
+        IntStream.generate(counter::getAndIncrement)
+                .filter(evenOnly)
+                .limit(10)
+                .forEach(System.out::println);
+
+        // stream of random strings
+        String randomString = Stream.generate(new StringGenerator())
+                .limit(512)
+                .collect(Collectors.joining());
+        System.out.println(randomString);
     }
 }
