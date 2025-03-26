@@ -9,7 +9,7 @@ public class StandardDeck implements Deck {
 
     private List<Card> cards;
 
-    public StandardDeck(); {
+    public StandardDeck() {
         this.cards = newDeck();
     }
 
