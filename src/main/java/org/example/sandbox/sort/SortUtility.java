@@ -103,4 +103,46 @@ public class SortUtility {
         return right;
     }
 
+    private static <T extends Comparable<T>> void mergeSort(T[] data, int min, int max) {
+        if (min < max) {
+            int mid = (min + max) / 2;
+            mergeSort(data, min, mid);
+            mergeSort(data, mid + 1, max);
+            merge(data, min, mid, max);
+        }
+    }
+
+    private static <T extends Comparable<T>> void merge(T[] data, int min, int mid, int max) {
+        // merge two sorted subarrays into a single sorted array
+
+        int leftIndex = min;
+        int rightIndex = mid + 1;
+        int mergedIndex = 0;
+
+        T[] mergedArray = (T[]) new Comparable[max - min + 1];
+
+        // merge the two halves
+        while (leftIndex <= mid && rightIndex <= max) {
+            if (data[leftIndex].compareTo(data[rightIndex]) < 0) {
+                mergedArray[mergedIndex++] = data[leftIndex++];
+            } else {
+                mergedArray[mergedIndex++] = data[rightIndex++];
+            }
+        }
+
+        // copy any remaining elements from the left half
+        while (leftIndex <= mid) {
+            mergedArray[mergedIndex++] = data[leftIndex++];
+        }
+
+        // copy any remaining elements from the right half
+        while (rightIndex <= max) {
+            mergedArray[mergedIndex++] = data[rightIndex++];
+        }
+
+        System.arraycopy(mergedArray, 0, data, min, mergedArray.length);
+
+
+    }
+
 }
